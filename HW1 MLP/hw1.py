@@ -10,9 +10,9 @@ NUM_CHECK = 5  # Number of examples on which to check the gradient
 NUM_HIDDEN = 100
 LEARNING_RATE = 0.2
 BATCH_SIZE = 64
-NUM_EPOCH = 5000
-DECAY_RATE = 0.6
-DECAY_STEPS = 1000
+NUM_EPOCH = 1000
+#DECAY_RATE = 0.6
+#DECAY_STEPS = 1000
 
 WHETHER_TEST = False
 
@@ -184,7 +184,7 @@ def train(trainX, trainY, testX, testY, w):
     
     for i in range(NUM_EPOCH):
         #更新学习率
-        real_learning_rate = LEARNING_RATE *(DECAY_RATE ** (i / DECAY_STEPS))
+        #real_learning_rate = LEARNING_RATE *(DECAY_RATE ** (i / DECAY_STEPS))
         
         
         train_batch_ID = np.arange(len(trainX))
@@ -197,12 +197,15 @@ def train(trainX, trainY, testX, testY, w):
         loss = fCE(train_batch_X, train_batch_Y, w)
         print("current epoch:", i)
         print("current loss:", loss)
-        print("current learning rate:", real_learning_rate)
+        #print("current learning rate:", real_learning_rate)
         delta = gradCE(train_batch_X, train_batch_Y, w)
-        w = w - real_learning_rate * delta
+        w = w - LEARNING_RATE * delta
+        if (i + 1) % 100 == 0:
+            print("current test: ",test(trainX, trainY,w), "%")
+            #最终训练准确率：95.79%
         
     print("final test: ", test(testX, testY, w), "%")
-
+    #最终测试准确率：92.84%
     
 
 

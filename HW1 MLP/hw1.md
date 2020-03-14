@@ -39,7 +39,7 @@ $$
 $$
 
 $$
-\frac{\partial L}{\partial a_{BN_{1b}}}=\delta^{(FC_{2b})}\theta_{2b}^{T},得到残差\delta^{(BN_{1b})} \tag\\
+\frac{\partial L}{\partial a_{BN_{1b}}}=\theta_{2b}^{T}\delta^{(FC_{2b})},得到残差\delta^{(BN_{1b})} \tag\\
 \frac{\partial L}{\partial \gamma} = \delta^{(BN_{1b})}\hat a_{FC_{1b}}^{T}\\
 \frac{\partial L}{\partial \beta}=\Sigma_{i=1}^{n_{ya}}\delta^{(BN_{1b})}_{i}\\
 对于BN层，记输出a_{BN_{1b}}为y，记输入a_{FC_{1b}}为x，则有\\
@@ -59,9 +59,9 @@ $$
 
 
 $$
-\frac{\partial L}{\partial \hat y_{a}}= \frac{1}{m}\sum_{i=1}^{m}(\hat y_a^{(i)} - y_a^{(i)})+\delta^{(FC_{2b})}\theta_{2b}^{T},组合得到残差\delta^{(ya)}\\
+\frac{\partial L}{\partial \hat y_{a}}= \frac{1}{m}\sum_{i=1}^{m}(\hat y_a^{(i)} - y_a^{(i)})+\theta_{2b}^{T}\delta^{(FC_{2b})},组合得到残差\delta^{(ya)}\\
 \frac{\partial L}{\partial\theta_{2a}} = \delta^{(ya)}a_{DP_{1a}}^{T}\\
-\frac{\partial L}{\partial a_{DP_{1a}}} = \delta^{(ya)}\theta_{2a}^{T},组合得到残差\delta^{(dp)}\\
+\frac{\partial L}{\partial a_{DP_{1a}}} = \theta_{2a}^{T}\delta^{(ya)},组合得到残差\delta^{(dp)}\\
 \frac{\partial L}{\partial a_{FC_{1a}}i}=
 \left\{ \begin{aligned}  
 0,r_{i}<p\\ 
