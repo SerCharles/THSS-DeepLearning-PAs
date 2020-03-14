@@ -45,8 +45,8 @@ $$
 对于BN层，记输出a_{BN_{1b}}为y，记输入a_{FC_{1b}}为x，则有\\
 \frac{\partial y_j}{\partial x_i} = 
 \left\{ \begin{aligned}
-\gamma (\sigma_{b}^{2}+\epsilon)^{-3/2}((1- \frac{1}{m})(\sigma_{b}^{2}+\epsilon) - \frac{1}{m}(x_j-\sigma_B)(x_i-\sigma_B),i = j\\
-\gamma (\sigma_{b}^{2}+\epsilon)^{-3/2}(-\frac{1}{m}(\sigma_{b}^{2}+\epsilon) - \frac{1}{2}(x_j-\sigma_B)(x_i-\sigma_B),i \neq j
+\gamma (\sigma_{b}^{2}+\epsilon)^{-3/2}((1- \frac{1}{m})(\sigma_{b}^{2}+\epsilon) - \frac{1}{m}(x_j-\sigma_B)\bigodot(x_i-\sigma_B)),i = j\\
+\gamma (\sigma_{b}^{2}+\epsilon)^{-3/2}(-\frac{1}{m}(\sigma_{b}^{2}+\epsilon) - \frac{1}{2}(x_j-\sigma_B)\bigodot(x_i-\sigma_B)),i \neq j
 \end{aligned}\right.\\
 \frac{\partial L}{\partial a_{FC_{1b}i}} = \Sigma_{j=1}^{m}\delta^{(BN_{1b})}\frac{\partial y_j}{\partial x_i}\\
 $$
