@@ -2,6 +2,60 @@
 typora-root-url: ./
 ---
 
+## 0.文件结构和执行方法
+
+- /src：代码目录
+
+  ​	main.py：主函数入口，包括训练和测试代码
+
+  ​	debug_model.py: 测试模型能否过拟合小规模数据
+
+  ​	parameters.py: 全局超参数
+
+  ​	models.py, model_self.py:模型定义和调用，其中model_self.py是自己的taskC模型的具体定义
+
+  ​	data.py:数据读取
+
+  ​	cnn_layer_visualization.py, deep_dream.py, misc_functions.py:引用的可视化库代码
+
+  ​	plot_cnn_visualize.py,plot_confusion_matrix.py,plot_tsne.py,visualize.py:CNN可视化，混淆矩阵绘制，t_SNE可视化代码
+
+  ​	plot_curves.py:测试训练结果可视化代码，使用tensorboard
+
+- /data：数据集目录
+
+- /result: 可视化和训练测试结果目录
+
+  ​	generated/layer_visualization:CNN可视化结果
+
+  ​	generated/deep_dream:deep_dream可视化结果
+
+  ​	models:最优模型所在地
+
+  ​	reports:训练，测试结果
+
+  ​	visualizations:t-SNE和混淆矩阵可视化结果
+
+执行方法：
+
+运行主训练-测试程序（使用下文的baseline，效果最好）
+
+```
+python main.py
+```
+
+各种可视化（执行时间较长）
+
+```
+python visualize.py
+```
+
+用tensorboard可视化（需要安装tensorboard）
+
+```
+python plot_curves.py
+```
+
 ## 1.taskA
 
 ![A](/A.png)
