@@ -1,0 +1,29 @@
+ssh shenguanlin@166.111.81.81
+shenguanlin
+ssh ubuntu@152.136.208.234  
+deeplearningCourse101
+scp -r main.py shenguanlin@166.111.81.81:~/hw3/src/main.py
+scp -r data.py shenguanlin@166.111.81.81:~/hw3/src/data.py
+scp -r models.py shenguanlin@166.111.81.81:~/hw3/src/models.py
+scp -r main.py ubuntu@152.136.208.234:~/sgl/hw3/src/main.py
+scp -r data.py ubuntu@152.136.208.234:~/sgl/hw3/src/data.py
+scp -r models.py ubuntu@152.136.208.234:~/sgl/hw3/src/models.py
+scp -r resnet18-5c106cde.pth shenguanlin@166.111.81.81:~/.cache/torch/checkpoints/resnet18-5c106cde.pth
+scp -r resnet18-5c106cde.pth ubuntu@152.136.208.234:~/.cache/torch/checkpoints/resnet18-5c106cde.pth
+scp shenguanlin@166.111.81.81:~/hw3/result/C.txt aa.txt
+scp ubuntu@152.136.208.234:~/sgl/hw3/result/C.txt aa.txt
+基本情况：adam算法+限制，0.64,1 文件：C_OPTIMAL.txt
+
+提供GRU(完成)，提供RNN（完成），自己LSTM（完成)
+提供10^-2（完成），自己10^-4（完成）
+提供fast decay（完成）, 自己slow decay（完成）
+提供SGD(完成）  Adam带多余项(完成）
+提供不dropout（完成）
+提供clip（完成）
+提供正交初始化（完成） （默认是均匀分布初始化）u(-sqrt(k),sqrt(k)),k是1/hidden size
+自己 自己实现的模型（完成）
+weight norm（op）
+//todo：layer norm
+//todo:attentionmodel，
+提供注意力模型
+
